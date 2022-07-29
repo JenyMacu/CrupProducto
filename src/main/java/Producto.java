@@ -11,14 +11,17 @@ public class Producto {
     Connection con;
     Conexion conectar = new Conexion();
     
-    public void crear(int codigo, String nombre, int cantidad){
-       String sql = "insert into medicamentos (codigo, nombre, cantidad) value(?,?,?)";
+    public void crear(int codigo, String nombre, int cantidad, String lugar, String fecha){
+       String sql = "insert into medicamentos (codigo, nombre, cantidad, lugar, fecha) value(?,?,?,?,?)";
        try{
            con = conectar.Conectar();
            ps = con.prepareStatement(sql);
            ps.setInt(1, codigo);
            ps.setString(2, nombre);
            ps.setInt(3, cantidad);
+           ps.setString(4, lugar);
+           ps.setString(5, fecha);
+         
            ps.executeUpdate();
            
        }catch(Exception e){      
