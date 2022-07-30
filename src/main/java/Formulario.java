@@ -61,7 +61,7 @@ public class Formulario {
         l5.setBounds(50, 300, 100, 100);
         jp.add(l5);
         
-        JTextField t5 = new JTextField();
+        JTextField t5 = new JTextField("AAA-MM-DD");
         t5.setBounds(150, 350, 150, 25);
         jp.add(t5);
                
@@ -70,7 +70,8 @@ public class Formulario {
         jp.add(b1);
         
         ActionListener guardar = new ActionListener(){
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e){   
+                
             Producto prod = new Producto();
                 prod.crear(Integer.parseInt(t1.getText()), t2.getText(), Integer.parseInt(t3.getText()), t4.getText(), t5.getText());
             }
